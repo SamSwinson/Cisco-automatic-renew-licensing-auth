@@ -1,0 +1,9 @@
+event manager applet LICENSE_RENEW_AUTH authorisation bypass
+	event timer cron name WEEKLY cron-entry "0 1 * * 1"
+    action 1.0 cli command "enable"
+    action 1.1 cli command "conf t"
+    action 1.2 cli command "license smart transport smart"
+    action 1.3 cli command "license smart utrl https://hostname.domain/SmartTransport"
+    action 1.4 cli command "exit"
+    action 1.5 cli command "license smart renew auth"
+    
